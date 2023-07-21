@@ -7,9 +7,7 @@ Download all the required files and libraries you need to run the tool: <br>
 `pip install selenium`
 
 In order to run the tool prepare the command like this, you need to put a `*` in order to mark the fuzzing point:
-```
-python3 xss_scanner.py -u <URL Containing a get parameter>* -w <wordlist_path>
-```
+`python3 xss_scanner.py -u <URL Containing a get parameter>* -w <wordlist_path>`
 
 You guys can use any wordlist you want but personally, I prefer [XSS-Jhaddix.txt](https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/XSS/XSS-Jhaddix.txt) by SecLists.
 
