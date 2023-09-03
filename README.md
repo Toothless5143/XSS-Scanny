@@ -1,19 +1,37 @@
 # XSS-Scanny
-This tool is a simple XSS (Cross-Site Scripting) scanner using `Selenium`, a popular web automation tool. It's designed to check if a given URL is vulnerable to XSS attacks by injecting different payloads from a wordlist into the URL.
+XSS-Scanny is a Python-based XSS (Cross-Site Scripting) scanner tool that leverages the `Selenium` library for web automation. It is designed to identify potential XSS vulnerabilities in web applications by injecting various payloads from a wordlist into target URLs. By analyzing the website's response, XSS-Scanny helps security professionals and ethical hackers detect and mitigate these security weaknesses before they can be exploited maliciously.
 
-### Installation:
-Download all the required files and libraries you need to run the tool: <br>
-```shell
-git clone https://github.com/Toothless5143/XSS-Scanny.git && cd XSS-Scanny
-pip install selenium
+**Installation:**
+
+To install XSS-Scanny, follow these steps:
+
+1. Clone the XSS-Scanny repository and navigate to the project directory:
+   ```
+   git clone https://github.com/Toothless5143/XSS-Scanny.git
+   cd XSS-Scanny
+   ```
+
+2. Install the required dependencies using pip:
+   ````
+   pip install selenium
+   ````
+
+**Usage:**
+
+To run XSS-Scanny, use the following command template:
+
+```
+python3 xss_scanner.py -u <URL Containing a GET parameter>* -w <wordlist_path>
 ```
 
-In order to run the tool prepare the command like this, you need to put a `*` in order to mark the fuzzing point: <br>
-```shell
-python3 xss_scanner.py -u <URL Containing a get parameter>* -w <wordlist_path>
-```
+- Replace `<URL Containing a GET parameter>*` with the target URL that includes a GET parameter you want to test for XSS vulnerabilities. The `*` character indicates the injection point.
 
-You guys can use any wordlist you want but personally, I prefer [XSS-Jhaddix.txt](https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/XSS/XSS-Jhaddix.txt) by SecLists.
+- Replace `<wordlist_path>` with the path to your desired wordlist file. XSS-Scanny uses this wordlist to generate different XSS payloads for testing. One recommended wordlist is XSS-Jhaddix.txt from SecLists.
+
+By executing XSS-Scanny with the specified parameters, the tool systematically injects each payload from the wordlist into the target URL, monitors the website's response, and reports any detected XSS vulnerabilities.
+
+**Note:**
+Ensure that you have proper authorization to perform security assessments on the target website. Unauthorized and malicious use of XSS-Scanny or similar tools is strictly prohibited.
 
 ### License:
-This tool is open source and available under the [MIT License.](/LICENSE)
+XSS-Scanny is an open-source tool released under the [MIT License.](/LICENSE)
